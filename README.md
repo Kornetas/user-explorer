@@ -21,7 +21,7 @@ Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta
 ✅ **Tryb ciemny 🌙 / jasny ☀️**  
 ✅ **Ulubieni użytkownicy** – serduszko ❤️  
 ✅ **Filtrowanie ulubionych** – pokaż tylko ❤️  
-✅ **Zapamiętywanie ustawień** w localStorage 
+✅ **Zapamiętywanie ustawień** w `localStorage` 
 ✅ **Spinner ładowania** i powiadomienie „Gotowe! ✅”
 
 ---
@@ -48,7 +48,7 @@ Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta
    npm start
    ```
 
-5. Aplikacja będzie dostępna pod adresem: [http://127.0.0.1:8080](http://127.0.0.1:8080)
+5. **Aplikacja będzie dostępna pod adresem**: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ✅ Gotowe! 🎉
 
