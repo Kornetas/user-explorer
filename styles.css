@@ -230,3 +230,23 @@ body.dark .user-card {
   80% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(20px); }
 }
+
+.favorites-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 19px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
+
+.heart-toggle {
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.heart-toggle:hover {
+  transform: scale(1.2);
+}

@@ -1,6 +1,14 @@
 import { SearchBar } from "./SearchBar.js";
+import { FavoritesToggle } from "./FavoritesToggle.js";
 
-export function Header({ onSearch, onSortToggle, getSortAsc, darkModeToggle, isDark }) {
+export function Header({
+  onSearch,
+  onSortToggle,
+  getSortAsc,
+  darkModeToggle,
+  isDark,
+  onFavoritesToggle
+}) {
   const container = document.createElement('div');
   container.className = 'controls';
 
@@ -23,9 +31,15 @@ export function Header({ onSearch, onSortToggle, getSortAsc, darkModeToggle, isD
 
   const search = SearchBar(onSearch);
 
+  const favoritesToggle = FavoritesToggle(
+    localStorage.getItem('favoritesOnly') === 'true',
+    onFavoritesToggle
+  );
+
   container.appendChild(themeBtn);
   container.appendChild(sortBtn);
   container.appendChild(search);
+  container.appendChild(favoritesToggle); // dodane na końcu
 
   return container;
 }
