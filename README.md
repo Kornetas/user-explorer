@@ -17,12 +17,13 @@ Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta
 
 ✅ Pobieranie danych użytkowników z **JSONPlaceholder API**  
 ✅ **Wyszukiwanie użytkowników** w czasie rzeczywistym  
-✅ **Sortowanie alfabetyczne A-Z ↕️**  
+✅ **Sortowanie alfabetyczne A-Z / Z-A ↕️**  
 ✅ **Tryb ciemny 🌙 / jasny ☀️**  
-✅ **Ulubieni użytkownicy** – serduszko ❤️  
+✅ **Ulubieni użytkownicy** – oznaczenie serduszkiem ❤️  
 ✅ **Filtrowanie ulubionych** – pokaż tylko ❤️  
-✅ **Zapamiętywanie ustawień** w `localStorage`  
-✅ **Spinner ładowania** i powiadomienie „Gotowe! ✅”
+✅ **Zapamiętywanie ustawień** w `localStorage` (sort, tryb, ulubieni)  
+✅ **Spinner ładowania** oraz toast „Gotowe! ✅”  
+✅ **Favicon** – estetyczna ikonka w zakładce przeglądarki 👤
 
 ---
 
