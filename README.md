@@ -21,7 +21,7 @@ Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta
 ✅ **Tryb ciemny 🌙 / jasny ☀️**  
 ✅ **Ulubieni użytkownicy** – serduszko ❤️  
 ✅ **Filtrowanie ulubionych** – pokaż tylko ❤️  
-✅ **Zapamiętywanie ustawień** w `localStorage` 
+✅ **Zapamiętywanie ustawień** w localStorage 
 ✅ **Spinner ładowania** i powiadomienie „Gotowe! ✅”
 
 ---
