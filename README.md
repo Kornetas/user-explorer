@@ -29,20 +29,26 @@ Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta
 ### 🚀 Uruchomienie projektu
 
 1. **Sklonuj repozytorium** (jeśli używasz GitHub):
-   ```sh
+
+   ```bash
    git clone https://github.com/Kornetas/user-explorer.git
+   ```
 
-   2. Otwórz Visual Studio Code i załaduj folder projektu.
+2. **Otwórz projekt** w edytorze (np. Visual Studio Code) i przejdź do folderu projektu.
 
-2. Zainstaluj serwer lokalny:
+3. **Zainstaluj zależności**:
 
-npm install
+   ```bash
+   npm install
+   ```
 
-3. Uruchom aplikację:
+4. **Uruchom aplikację**:
 
-npm start
+   ```bash
+   npm start
+   ```
 
-Aplikacja będzie dostępna pod adresem: http://127.0.0.1:8080/
+5. Aplikacja będzie dostępna pod adresem: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ✅ Gotowe! 🎉
 
