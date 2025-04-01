@@ -1,7 +1,11 @@
-import { initApp } from './app.js'
+import { initApp } from './app.js';
 
-const root = document.body
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('app');
 
-initApp(root)
-
-
+  if (root) {
+    initApp(root);
+  } else {
+    console.error('Element #app nie został znaleziony w DOM!');
+  }
+});
