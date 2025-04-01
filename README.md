@@ -48,12 +48,15 @@ Aplikacja będzie dostępna pod adresem: http://127.0.0.1:8080/
 
 ### 🛠️ Technologie
 
-✅ HTML5 – struktura aplikacji
-✅ CSS3 – stylizacja + tryb ciemny + animacje
-✅ JavaScript (ES6 Modules) – logika, komponenty
-✅ Axios – pobieranie danych z API
-✅ http-server – prosty serwer lokalny do uruchamiania projektu
-✅ LocalStorage – zapamiętywanie ustawień (sort, tryb, ulubieni)
+| ✅ | Technologia                 | Opis                                                             |
+|----|-----------------------------|------------------------------------------------------------------|
+| ✅ | **HTML5**                   | Struktura aplikacji                                              |
+| ✅ | **CSS3**                    | Stylizacja + tryb ciemny 🌙 + animacje                           |
+| ✅ | **JavaScript (ES6 Modules)**| Logika, komponenty                                               |
+| ✅ | **Axios**                   | Pobieranie danych z API                                          |
+| ✅ | **http-server**             | Prosty serwer lokalny do uruchamiania projektu                   |
+| ✅ | **LocalStorage**            | Zapamiętywanie ustawień (sort, tryb, ulubieni)                   |
+
 
 🗂️ Struktura projektu
 
