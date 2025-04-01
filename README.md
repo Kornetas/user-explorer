@@ -1,4 +1,4 @@
-# 🧭 User Explorer
+# 📋 Lista Użytkowników
 
 ## 📸 Podgląd aplikacji
 
@@ -12,8 +12,8 @@
 
 ### 📌 Opis projektu
 
-User Explorer to aplikacja frontendowa, która umożliwia **przeglądanie, sortowanie, wyszukiwanie oraz oznaczanie ulubionych użytkowników**.  
-Wspiera **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, pamięta ustawienia w `localStorage`, a wszystko zbudowane jest w czystym JavaScript bez frameworków.
+**Lista Użytkowników** to nowoczesna aplikacja frontendowa, która umożliwia **przeglądanie, sortowanie, wyszukiwanie oraz oznaczanie ulubionych użytkowników**.  
+Obsługuje **tryb ciemny 🌙**, filtr **„Pokaż ulubionych” ❤️**, **spinner ładowania** oraz zapamiętuje ustawienia w `localStorage`. Zbudowana w czystym JavaScript bez frameworków.
 
 ---
 
