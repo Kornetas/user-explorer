@@ -75,14 +75,21 @@ export async function initApp(container) {
   function render() {
     let filtered = users
       .filter(user => user.name.toLowerCase().includes(searchQuery.toLowerCase()));
-
+  
     if (showFavoritesOnly) {
       filtered = filtered.filter(user => favorites.includes(user.id));
     }
-
+  
+    filtered.sort((a, b) =>
+      sortAsc
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
+    );
+  
     listContainer.innerHTML = '';
     listContainer.appendChild(UserList(filtered, favorites, toggleFavorite));
   }
+  
 
   function toggleFavorite(id) {
     if (favorites.includes(id)) {
