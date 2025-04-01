@@ -46,7 +46,9 @@ Aplikacja będzie dostępna pod adresem: http://127.0.0.1:8080/
 
 ✅ Gotowe! 🎉
 
+
 ### 🛠️ Technologie
+
 
 | ✅ | Technologia                 | Opis                                                             |
 |----|-----------------------------|------------------------------------------------------------------|
@@ -58,24 +60,26 @@ Aplikacja będzie dostępna pod adresem: http://127.0.0.1:8080/
 | ✅ | **LocalStorage**            | Zapamiętywanie ustawień (sort, tryb, ulubieni)                   |
 
 
-🗂️ Struktura projektu
+### 🗂️ Struktura projektu
 
-📦 src/
-┣ 📂 components/
-┃ ┣ FavoritesToggle.js      ← Przełącznik „Pokaż ulubionych”
-┃ ┣ Header.js               ← Górny pasek z przyciskami i wyszukiwarką
-┃ ┣ SearchBar.js            ← Komponent pola wyszukiwania
-┃ ┣ Spinner.js              ← Komponent ładowania danych
-┃ ┣ Toast.js                ← Komponent powiadomienia „Gotowe!”
-┃ ┣ UserCard.js             ← Pojedyncza karta użytkownika
-┃ ┗ UserList.js             ← Lista wszystkich użytkowników
-┣ 📂 services/
-┃ ┗ api.js                  ← Pobieranie danych z API
-┣ app.js                    ← Logika główna aplikacji
-┣ main.js                   ← Punkt wejściowy (initApp)
-📄 index.html
-📄 styles.css                ← Główne style (ciemny motyw, layout, animacje)
-📄 package.json
-📄 package-lock.json
-📄 README.md
 
+| Folder / Plik             | Opis                                                                 |
+|---------------------------|----------------------------------------------------------------------|
+| 📁 `src/`                 | Główna logika aplikacji                                              |
+| ┣ 📁 `components/`        | Komponenty UI (pola, karty, przełączniki itp.)                       |
+| ┃ ┣ `FavoritesToggle.js`  | Przełącznik „Pokaż ulubionych”                                       |
+| ┃ ┣ `Header.js`           | Pasek górny z przyciskami i wyszukiwarką                             |
+| ┃ ┣ `SearchBar.js`        | Komponent pola wyszukiwania                                          |
+| ┃ ┣ `Spinner.js`          | Spinner ładowania                                                    |
+| ┃ ┣ `Toast.js`            | Powiadomienie „Gotowe!” ✅                                           |
+| ┃ ┣ `UserCard.js`         | Pojedyncza karta użytkownika                                         |
+| ┃ ┗ `UserList.js`         | Lista użytkowników                                                   |
+| ┣ 📁 `services/`          | Logika komunikacji z zewnętrznym API                                 |
+| ┃ ┗ `api.js`              | Pobieranie danych z JSONPlaceholder API                              |
+| ┣ `app.js`                | Główna logika aplikacji, renderowanie                                |
+| ┣ `main.js`               | Punkt wejściowy, inicjalizacja (`initApp`)                           |
+| 📄 `index.html`           | Struktura strony                                                     |
+| 📄 `styles.css`           | Stylizacja aplikacji (ciemny motyw, layout, animacje)                |
+| 📄 `package.json`         | Konfiguracja projektu i skrypty (`npm start`)                        |
+| 📄 `package-lock.json`    | Automatycznie generowany przez `npm install`                         |
+| 📄 `README.md`            | Dokumentacja projektu (ten plik!)                                   |
