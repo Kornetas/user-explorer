@@ -4,6 +4,8 @@
 
 ![Podgląd aplikacji](screenshot.png)
 
+![Podgląd działania](demo.gif)
+
 ---
 
 ### 📌 Opis projektu
