@@ -4,6 +4,8 @@
 
 ![Podgląd aplikacji](screenshot.png)
 
+## 🎥 Demo działania aplikacji
+
 ![Podgląd działania](demo.gif)
 
 ---
