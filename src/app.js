@@ -19,6 +19,7 @@ export async function initApp(container) {
   document.body.appendChild(spinner);
   await new Promise((res) => setTimeout(res, 3000));
 
+  // Toast
   const users = await fetchUsers();
   spinner.remove();
   showToast("Gotowe! ✅");
