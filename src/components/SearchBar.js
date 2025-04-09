@@ -4,6 +4,8 @@ export function SearchBar(onSearch) {
   input.type = "text";
   input.placeholder = "Search user...";
   input.className = "search-input";
+  input.name = "search";
+  input.id = "search-input";
 
   //restore previous query from localStorage
   input.value = localStorage.getItem("searchQuery") || "";
