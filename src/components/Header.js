@@ -7,39 +7,45 @@ export function Header({
   getSortAsc,
   darkModeToggle,
   isDark,
-  onFavoritesToggle
+  onFavoritesToggle,
 }) {
-  const container = document.createElement('div');
-  container.className = 'controls';
+  // Create the main container for header controls
+  const container = document.createElement("div");
+  container.className = "controls";
 
-  const sortBtn = document.createElement('button');
-  sortBtn.className = 'sort-btn';
-  sortBtn.textContent = getSortAsc() ? 'Sortuj A-Z 🔽' : 'Sortuj Z-A 🔼';
-  sortBtn.addEventListener('click', () => {
+  // Sort button (toggles A-Z / Z-A)
+  const sortBtn = document.createElement("button");
+  sortBtn.className = "sort-btn";
+  sortBtn.textContent = getSortAsc() ? "Sort A-Z 🔽" : "Sort Z-A 🔼";
+  sortBtn.addEventListener("click", () => {
     onSortToggle();
-    sortBtn.textContent = getSortAsc() ? 'Sortuj A-Z 🔽' : 'Sortuj Z-A 🔼';
+    sortBtn.textContent = getSortAsc() ? "Sort A-Z 🔽" : "Sort Z-A 🔼";
   });
 
-  const themeBtn = document.createElement('button');
-  themeBtn.className = 'theme-btn';
-  themeBtn.textContent = isDark ? '☀️ Tryb dzienny' : '🌙 Tryb nocny';
-  themeBtn.addEventListener('click', () => {
+  // Theme toggle button light, dark mode
+  const themeBtn = document.createElement("button");
+  themeBtn.className = "theme-btn";
+  themeBtn.textContent = isDark ? "☀️ Light mode" : "🌙 Dark mode";
+  themeBtn.addEventListener("click", () => {
     darkModeToggle();
-    const nowDark = document.body.classList.contains('dark');
-    themeBtn.textContent = nowDark ? '☀️ Tryb dzienny' : '🌙 Tryb nocny';
+    const nowDark = document.body.classList.contains("dark");
+    themeBtn.textContent = nowDark ? "☀️ Light mode" : "🌙 Dark mode";
   });
 
+  // Search input component
   const search = SearchBar(onSearch);
 
+  // Favorites toggle heart icon + label
   const favoritesToggle = FavoritesToggle(
-    localStorage.getItem('favoritesOnly') === 'true',
+    localStorage.getItem("favoritesOnly") === "true",
     onFavoritesToggle
   );
 
+  // Append all controls to the container
   container.appendChild(themeBtn);
   container.appendChild(sortBtn);
   container.appendChild(search);
-  container.appendChild(favoritesToggle); // dodane na końcu
+  container.appendChild(favoritesToggle);
 
   return container;
 }

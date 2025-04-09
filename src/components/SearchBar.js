@@ -1,18 +1,22 @@
 export function SearchBar(onSearch) {
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.placeholder = 'Szukaj użytkownika...';
-    input.className = 'search-input'; 
+  //create the input element for search
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Search user...";
+  input.className = "search-input";
 
-    input.value = localStorage.getItem("searchQuery") || "";
+  //restore previous query from localStorage
+  input.value = localStorage.getItem("searchQuery") || "";
 
-    input.addEventListener('input', () => {
-        const query = input.value;
-        localStorage.setItem("searchQuery", query);
-        onSearch(query);
-    });
+  //handle input change
+  input.addEventListener("input", () => {
+    const query = input.value;
+    localStorage.setItem("searchQuery", query);
+    onSearch(query);
+  });
 
-    setTimeout(() => onSearch(input.value), 0);
+  //trigger initial search after mount
+  setTimeout(() => onSearch(input.value), 0);
 
-    return input;
+  return input;
 }

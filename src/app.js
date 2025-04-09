@@ -1,42 +1,42 @@
-import { fetchUsers } from './services/api.js';
-import { Spinner } from './components/Spinner.js';
-import { showToast } from './components/Toast.js';
-import { Header } from './components/Header.js';
-import { UserList } from './components/UserList.js';
+import { fetchUsers } from "./services/api.js";
+import { Spinner } from "./components/Spinner.js";
+import { showToast } from "./components/Toast.js";
+import { Header } from "./components/Header.js";
+import { UserList } from "./components/UserList.js";
 
 export async function initApp(container) {
-  // 1. Wczytaj ustawienia z localStorage
-  const savedDark = localStorage.getItem('darkMode') === 'true';
-  const savedSort = localStorage.getItem('sortAsc') === 'false' ? false : true;
-  const savedFavoritesOnly = localStorage.getItem('favoritesOnly') === 'true';
+  // Load settings from localStorage
+  const savedDark = localStorage.getItem("darkMode") === "true";
+  const savedSort = localStorage.getItem("sortAsc") === "false" ? false : true;
+  const savedFavoritesOnly = localStorage.getItem("favoritesOnly") === "true";
 
   if (savedDark) {
-    document.body.classList.add('dark');
+    document.body.classList.add("dark");
   }
 
-  // 2. Spinner
+  // Show loading spinner
   const spinner = Spinner();
   document.body.appendChild(spinner);
   await new Promise((res) => setTimeout(res, 3000));
 
-  // Toast
+  // Fetch users and show toast
   const users = await fetchUsers();
   spinner.remove();
-  showToast("Gotowe! ✅");
+  showToast("Done! ✅");
 
-  // 3. Stan aplikacji
+  // App state
   let sortAsc = savedSort;
-  let searchQuery = '';
+  let searchQuery = "";
   let showFavoritesOnly = savedFavoritesOnly;
-  let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+  let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
-  // 4. Layout
-  const app = document.createElement('div');
-  app.className = 'app';
+  // Layout
+  const app = document.createElement("div");
+  app.className = "app";
 
-  const listContainer = document.createElement('div');
+  const listContainer = document.createElement("div");
 
-  // 5. Header z przekazaniem wszystkich akcji
+  // 5. Header component with all actions passed in
   const header = Header({
     sortAsc,
     isDark: savedDark,
@@ -49,21 +49,21 @@ export async function initApp(container) {
 
     onSortToggle: () => {
       sortAsc = !sortAsc;
-      localStorage.setItem('sortAsc', sortAsc);
+      localStorage.setItem("sortAsc", sortAsc);
       render();
     },
 
     darkModeToggle: () => {
-      document.body.classList.toggle('dark');
-      const nowDark = document.body.classList.contains('dark');
-      localStorage.setItem('darkMode', nowDark);
+      document.body.classList.toggle("dark");
+      const nowDark = document.body.classList.contains("dark");
+      localStorage.setItem("darkMode", nowDark);
     },
 
     onFavoritesToggle: (value) => {
       showFavoritesOnly = value;
-      localStorage.setItem('favoritesOnly', value);
+      localStorage.setItem("favoritesOnly", value);
       render();
-    }
+    },
   });
 
   app.appendChild(header);
@@ -72,33 +72,32 @@ export async function initApp(container) {
 
   render();
 
-  // 6. Render z uwzględnieniem filtrowania ulubionych
+  // Render filtr and sort user list
   function render() {
-    let filtered = users
-      .filter(user => user.name.toLowerCase().includes(searchQuery.toLowerCase()));
-  
-    if (showFavoritesOnly) {
-      filtered = filtered.filter(user => favorites.includes(user.id));
-    }
-  
-    filtered.sort((a, b) =>
-      sortAsc
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
+    let filtered = users.filter((user) =>
+      user.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  
-    listContainer.innerHTML = '';
+
+    if (showFavoritesOnly) {
+      filtered = filtered.filter((user) => favorites.includes(user.id));
+    }
+
+    filtered.sort((a, b) =>
+      sortAsc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+    );
+
+    listContainer.innerHTML = "";
     listContainer.appendChild(UserList(filtered, favorites, toggleFavorite));
   }
-  
 
+  // Toggle favorite state
   function toggleFavorite(id) {
     if (favorites.includes(id)) {
-      favorites = favorites.filter(f => f !== id);
+      favorites = favorites.filter((f) => f !== id);
     } else {
       favorites.push(id);
     }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem("favorites", JSON.stringify(favorites));
     render();
   }
 }
