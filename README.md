@@ -113,3 +113,10 @@ Tests are fully browser-based and check the behavior of interactive components.
 | `tests/index.html`              | Minimal runner – open in browser and view console  |
 
 > ✅ To run tests, open `tests/index.html` in your browser and check the DevTools console (`F12`).
+
+
+### 🧪 Test Preview
+
+The following screenshot shows how the unit tests are executed directly in the browser using the custom test runner:
+
+![Test preview](testy.png)
